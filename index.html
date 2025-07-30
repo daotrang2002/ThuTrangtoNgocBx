@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>From Thu Trang to Ngoc Bx - Mobile Version</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+
+    body {
+      font-family: 'Handlee', cursive;
+      background-color: #f0f0f0;
+      margin: 10px;
+      text-align: center;
+    }
+
+    .question-box {
+      margin-top: 40px;
+      font-size: 20px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      margin: 15px;
+      font-size: 18px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn-yes {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    .btn-no {
+      background-color: #f44336;
+      color: white;
+      position: relative;
+    }
+
+    .btn-no:hover {
+      position: absolute;
+      top: calc(20px + (Math.random() * 100px));
+      left: calc(20px + (Math.random() * 100px));
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .text-box {
+      width: 95%;
+      margin: 20px auto;
+      background-color: #FDDDE6;
+      color: black;
+      padding: 20px;
+      font-size: 16px;
+      line-height: 1.4;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      border-radius: 10px;
+      text-align: left;
+      white-space: pre-wrap;
+      min-height: 200px;
+    }
+
+    .svg-text {
+      width: 90%;
+      max-width: 300px;
+      margin: 30px auto;
+      display: none;
+    }
+
+    .carousel-wrapper {
+      display: flex;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 8px;
+      padding: 15px;
+      scroll-behavior: smooth;
+      margin: 20px auto;
+      max-width: 100%;
+    }
+
+    .carousel-wrapper::-webkit-scrollbar {
+      display: none;
+    }
+
+    .carousel-item {
+      flex: 0 0 auto;
+      width: 200px;
+      height: 130px;
+      scroll-snap-align: center;
+      transition: transform 0.5s ease;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .carousel-item.zoom {
+      transform: scale(1.1);
+      z-index: 2;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    path {
+      stroke-dasharray: 1000;
+      stroke-dashoffset: 1000;
+      animation: draw 4s ease forwards;
+    }
+
+    @keyframes draw {
+      to {
+        stroke-dashoffset: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<audio autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+  Trình duyệt của bạn không hỗ trợ âm thanh.
+</audio>
+
+<div class="question-box" id="questionBox">
+  <p>Ngọc Bích có yêu quý Thu Trang không? 🥺</p>
+  <button class="btn btn-yes" onclick="showContent()">Có 🥰</button>
+  <button class="btn btn-no" id="noBtn">Không 😤</button>
+</div>
+
+<div id="content" class="hidden">
+  <div class="text-box">
+    <span id="typedText"></span>
+  </div>
+
+  <div class="svg-text" id="loveText">
+    <svg viewBox="0 0 500 100">
+      <path d="M20,50 Q100,10 180,50 T340,50 Q420,90 480,50" fill="none" stroke="#e91e63" stroke-width="4"/>
+      <text x="50%" y="65%" text-anchor="middle" font-size="30" font-family="cursive" fill="none" stroke="#e91e63" stroke-width="1">
+        Love you!
+      </text>
+    </svg>
+  </div>
+
+  <div class="carousel-wrapper" id="carousel">
+    <img src="ThuTrang/1.JPEG" class="carousel-item">
+    <img src="ThuTrang/2.JPG" class="carousel-item">
+    <img src="ThuTrang/3.JPG" class="carousel-item">
+    <img src="ThuTrang/4.jpg" class="carousel-item">
+    <img src="ThuTrang/5.jpg" class="carousel-item">
+    <img src="ThuTrang/6.PNG" class="carousel-item">
+    <img src="ThuTrang/7.jpg" class="carousel-item">
+    <img src="ThuTrang/8.PNG" class="carousel-item">
+    <img src="ThuTrang/9.jpg" class="carousel-item">
+    <img src="ThuTrang/10.JPG" class="carousel-item">
+  </div>
+</div>
+
+<script>
+const text = `Ư ư cợt nhả quen rồi giờ viết thư xúc động k có nổi :)))
+
+Không biết phải bắt đầu từ đâu nên chỉ biết khép lại bằng 1 lời cảm ơn nhiều nhiều!
+
+Cảm ơn người chị đã đồng hành và nâng đỡ Thu Trang trong suốt 2 năm qua, từ lúc còn năm 3 đi thực tập đến lúc đủ lông đủ cánh nói 1 câu cãi 10 câu hẹ hẹ :))) 
+
+Hai năm không phải là thời gian quá dài nhưng cũng đủ 7749 kỹ năng sống sót ở Trace-Tec được chia sẻ, 1001 lần cùng nhau nấu xói, 365 lần cùng nhau OT, và 1 năng lượng team-mate quá toẹt vời mà mình sẽ k bao giờ quên 😭 
+Trong suốt quãng thời gian ở Trace-Tec, em cũng đã “ké” được kha khá điều hữu ích từ chị, không chỉ trong công việc, cách giao tiếp mà còn những thói quen, những câu chuyện và các tips trong cuộc sống hehe. Hy vọng sau này khi sang cty mới chị cũng có thể lan toả những điều amazing như thế! (You are really admirable, incase you don’t know).
+
+Thật sự không nỡ nhưng rồi cuộc gặp gỡ nào cũng đến lúc chia tay. Từ ngày mai không còn được ăn ké bữa sáng, không làm việc chung nữa, không cười cùng 1 câu chuyện nữa, không ăn trưa cùng nhau nữa, nghĩ thui đã thấy bùn hơn cả chia tay nyc rồi huhu :”>
+
+Dù sao đi nữa thì cuộc gặp gỡ này sẽ mãi là một kỷ niệm rất rất đẹp với em. Chúc chị với công việc mới sẽ có thật nhiều may mắn, một người sếp 100 điểm, những người team-mate toẹt vời (hơn bọn em) và luôn có một tinh thần vui vẻ, hạnh phúc.
+Đặc biệt hy vọng chị sẽ sớm chào đón 1 thiên thần bé nhỏ trong năm nay nheee! 
+
+P/s: Sẽ tiếp tục update drama công sở :)))`;
+
+let i = 0;
+const speed = 25;
+const typedText = document.getElementById("typedText");
+
+function typeWriter() {
+  if (i < text.length) {
+    typedText.textContent += text.charAt(i);
+    i++;
+    setTimeout(typeWriter, speed);
+  } else {
+    document.getElementById("loveText").style.display = "block";
+  }
+}
+
+function showContent() {
+  document.getElementById("questionBox").style.display = "none";
+  document.getElementById("content").classList.remove("hidden");
+  typeWriter();
+}
+
+const carousel = document.getElementById("carousel");
+
+function highlightCenterItem() {
+  const items = document.querySelectorAll(".carousel-item");
+  const center = carousel.offsetWidth / 2;
+  items.forEach(img => {
+    const box = img.getBoundingClientRect();
+    const imgCenter = box.left + box.width / 2;
+    const distance = Math.abs(center - imgCenter);
+    if (distance < box.width / 2) {
+      img.classList.add("zoom");
+    } else {
+      img.classList.remove("zoom");
+    }
+  });
+}
+
+function loopCarousel() {
+  if (carousel.scrollLeft + carousel.clientWidth >= carousel.scrollWidth) {
+    carousel.scrollLeft = 0;
+  } else {
+    carousel.scrollBy({ left: 220, behavior: 'smooth' });
+  }
+}
+
+carousel.addEventListener("scroll", () => {
+  window.requestAnimationFrame(highlightCenterItem);
+});
+
+window.addEventListener("load", () => {
+  highlightCenterItem();
+  const clones = carousel.innerHTML;
+  carousel.innerHTML += clones;
+});
+
+setInterval(loopCarousel, 3000);
+</script>
+
+</body>
+</html>
